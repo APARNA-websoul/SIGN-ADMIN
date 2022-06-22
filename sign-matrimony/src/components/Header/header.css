@@ -1,0 +1,14 @@
+.logo-img{
+    width: 40px;
+    height: auto;
+    margin-top:15px;
+    margin-left: 10px;
+}
+.header{
+    height: 10vh;
+}
+.logout{
+    text-align: right;
+    margin-top: -25px;
+    margin-right: 20px;
+}

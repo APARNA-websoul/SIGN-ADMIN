@@ -1,0 +1,157 @@
+.authheader{
+    display: flex;
+    padding-left: 50px;
+    border-bottom: #ffe0e0 1px solid;
+    box-shadow: 0 0 5px 0 #D83C3C;
+}
+
+.logoimg{
+    width: 5%;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+.signupbody{
+    padding: 3% 5% ;
+    margin-bottom: 80px;
+}
+
+
+.marriageimg{
+    width: 90%;
+    border-radius: 5%; 
+}
+
+.imagesection{
+    margin-top: 5%;
+    position: relative;
+}
+
+.textfield{
+    width: 75%;
+}
+
+.formsection{
+    margin-top: 20%;
+}
+
+.formhead{
+    color: #f14f4f;
+    font-size: 26px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.marriagequote{
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 30px;
+    word-spacing: 3px;
+    letter-spacing: 0.2rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    position: absolute;
+    top: 85%;
+    margin-left: 28%;
+    margin-right: 2%;
+    transform: translate(-20%, -50%);
+  
+}
+
+@media screen and (max-width: 1025px) {
+    .marriagequote{
+        font-size: 18px;
+        word-spacing: 2px;
+        top: 84%;
+    }
+
+    .logoimg{
+        width: 8%;
+    }
+
+    .signupbody{
+        padding: 3% 1% ;
+    }
+
+    .imagesection{
+        margin-top: 10%;
+    }
+
+    .textfield{
+        width: 90%;
+    }
+    
+}
+
+@media screen and (max-width: 769px) {
+    .marriagequote{
+        font-size: 16px;
+        word-spacing: 0.4px;
+        line-height: 23px;
+        letter-spacing: 0.1rem;
+        margin-left: 27%;
+        margin-right: 1%;
+    }
+
+    .authheader{
+        padding-left: 40px;
+    }
+    .formhead{
+        font-size: 22px;
+    }
+    
+    .logoimg{
+        width: 9%;
+    }
+    
+    .signupbody{
+        padding: 3% 1% ;
+    }
+    
+}
+
+@media screen and (max-width: 600px){
+    .logoimg{
+        width: 15%;
+    }
+
+    .marriagequote{
+        font-size: 18px;
+        line-height: 20px;
+        word-spacing: 1px;
+        letter-spacing: 0.1rem;
+        margin-left: 27%;
+        margin-right: 1%;
+    }
+
+    .formsection{
+        margin-top: 5%;
+    }
+
+}
+
+@media screen and (max-width: 380px){
+
+    .marriagequote{
+        font-size: 15px;
+        top: 85%;
+    }
+
+}
+
+@media screen and (max-width: 330px){
+
+    .authheader{
+        padding-left: 30px;
+    }
+
+    .formhead{
+        font-size: 18px;
+    }
+
+    .marriagequote{
+        font-size: 12px;
+        line-height: 16px;
+    }
+}

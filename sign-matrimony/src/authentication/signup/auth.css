@@ -1,0 +1,46 @@
+.password-input .MuiInputBase-input{
+    -webkit-text-security:disc;  
+}
+
+#Password{
+    -webkit-text-security:disc; 
+}
+
+
+.css-1kiivd2{
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+
+.css-10hburv-MuiTypography-root {
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    font-size: 15px !important;
+    line-height: 1.2 !important;
+}
+
+
+@media screen and (max-width: 769px) {
+
+    .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+        height: 0.8em !important;
+    }
+
+    .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select{
+        max-height: 0.8em !important;
+        min-height: 0.8em !important;
+    }
+
+}
+
+
+@media screen and (max-width: 600px){
+    .css-11lq3yg-MuiGrid-root{
+        flex-direction: column !important;
+    }
+
+    .css-zow5z4-MuiGrid-root{
+        flex-direction: column !important;
+    }
+
+}

@@ -1,0 +1,296 @@
+.authheader{
+    display: flex;
+    padding-left: 50px;
+    border-bottom: #ffe0e0 1px solid;
+    box-shadow: 0 0 5px 0 #D83C3C;
+}
+
+.logoimg{
+    width: 5%;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+.loginbody{
+    padding: 3% 5% ;
+    margin-bottom: 80px;
+    /*background-color: #ffd9d9;*/
+}
+
+
+.marriageimg{
+    width: 90%;
+    border-radius: 5%; 
+}
+
+.imagesection{
+    margin-top: 5%;
+    position: relative;
+}
+
+
+.formsection{
+    margin-top: 15%;
+}
+
+.formhead{
+    color: #f14f4f;
+    font-size: 26px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.marriagequote{
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 30px;
+    word-spacing: 3px;
+    letter-spacing: 0.2rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    position: absolute;
+    top: 82%;
+    margin-left: 30%;
+    margin-right: 2%;
+    transform: translate(-20%, -50%);
+  
+}
+
+.textfield{
+    width: 75%;
+}
+
+.qustn{
+    margin-top: 20px;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: left;
+    margin-left: 12%;
+}
+
+.qustn1 {
+    font-size: 15px;
+    margin-right: 15%;
+    float: right;
+    
+}
+
+.qustn a{
+    color:#f14f4f !important;
+}
+
+
+/*----responsive---*/
+
+@media screen and (max-width: 1040px) {
+    .marriagequote{
+        font-size: 18px;
+        word-spacing: 2px;
+    }
+
+    .logoimg{
+        width: 8%;
+    }
+
+    .imagesection{
+        margin-top: 10%;
+    }
+
+    .loginbody{
+        padding: 3% 1% ;
+    }
+
+    .formsection{
+        margin-top: 15%;
+    }
+
+    .textfield{
+        width: 90%;
+    }
+
+    .qustn{
+        font-size: 20px;
+        margin-left: 4.5%;
+        margin-top: 30px;
+    }
+    
+    .qustn1 {
+        font-size: 16px;
+        margin-right: 6%;
+    }
+    
+}
+
+@media screen and (max-width: 970px){
+    .qustn{
+        font-size: 17px;
+    }
+    
+    .qustn1 {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 830px){
+    .qustn{
+        font-size: 15px;
+    }
+    
+    .qustn1 {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .marriagequote{
+        font-size: 15.5px;
+        word-spacing: 0.5px;
+        line-height: 23px;
+    }
+
+    .imagesection{
+        margin-top: 30px;
+    }
+
+    .authheader{
+        padding-left: 40px;
+    }
+
+    .formsection{
+        margin-top: 8%;
+    }
+    
+    .formhead{
+        font-size: 22px;
+    }
+    
+    .logoimg{
+        width: 9%;
+    }
+    
+    .loginbody{
+        padding: 3% 1% ;
+    }
+
+    .qustn{
+        font-size: 15px;
+        margin-left: 5%;
+        margin-top: 20px;
+    }
+    
+    .qustn1 {
+        font-size: 13px;
+    }
+
+}
+
+@media screen and (max-width: 750px){
+    .qustn{
+        font-size: 13px;
+    }
+    
+    .qustn1 {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 665px){
+    .qustn{
+        font-size: 12px;
+    }
+    
+    .qustn1 {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .logoimg{
+        width: 15%;
+    }
+
+    .marriagequote{
+        font-size: 16px;
+        line-height: 20px;
+        word-spacing: 1px;
+        letter-spacing: 0.1rem;
+    }
+
+    .formsection{
+        margin-top: 2%;
+    }
+
+    .qustn{
+        font-size: 19px;
+    }
+    
+    .qustn1 {
+        font-size: 15px;
+        margin-right: 6%;
+    }
+}
+
+@media screen and (max-width: 460px){
+    .qustn{
+        font-size: 17px;
+    }
+    
+    .qustn1 {
+        font-size: 13px;
+    }
+
+}
+
+@media screen and (max-width: 395px){
+    
+    .marriagequote{
+        font-size: 15px;
+        line-height: 17px;
+        top: 83%;
+    }
+
+    .qustn{
+        font-size: 15px;
+    }
+    
+    .qustn1 {
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (max-width: 345px){
+    .formhead{
+        font-size: 18px;
+    }
+
+    .authheader{
+        padding-left: 30px;
+    }
+
+    .marriagequote{
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .qustn{
+        font-size: 14px;
+    }
+    
+    .qustn1 {
+        font-size: 11px;
+    }
+}
+
+
+@media screen and (max-width: 330px){
+    .qustn{
+        font-size: 12px;
+    }
+    
+    .qustn1 {
+        font-size: 10px;
+    }
+}
+
