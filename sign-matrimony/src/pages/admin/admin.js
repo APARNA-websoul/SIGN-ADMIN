@@ -1,4 +1,4 @@
-import React,{useEffect,useState}from "react";
+import React, { useEffect, useState } from "react";
 import './admin.css'
 import { db } from "../../db"
 import { styled } from '@mui/material/styles';
@@ -9,8 +9,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { ref, onValue} from 'firebase/database';
-import { Link, useLocation, useParams } from "react-router-dom";
+import { ref, onValue } from 'firebase/database';
+import { Link, useLocation, useParams, NavLink } from "react-router-dom";
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -26,7 +26,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
     backgroundColor: theme.palette.action.hover,
-    
+
   },
   // hide last border
   '&:last-child td, &:last-child th': {
@@ -40,43 +40,44 @@ function createData(
   status: String,
   view: String,
   download: String,
-  
-)
-{
-  return {slno, name, status, view, download };
+
+) {
+  return { slno, name, status, view, download };
 }
 
 function Admin() {
-  
+
   const [record, setRecord] = useState([]);
-  
-  useEffect(() => { 
-    const starCountRef = ref(db, '/record' );  
-     onValue(starCountRef, snapshot => {       
-       const data1 = snapshot.val();
-       if (data1 !== null) {
-         setRecord([]);
-         Object.values(data1).map(Team => {
-           setRecord(oldArray => [...oldArray, Team]);         
-         });        
-       } else {
-         setRecord([]);
-       }      
-       console.log('record', record);
-       record.map((item, index) => {
-         console.log('item.name', item.name);
-       });      
-     }
-     ,{
-       onlyOnce: true
-     } 
-     );    
-   },[]);      
+  const [uniqueRecord, setUniqueRecord] = useState([]);
+
+  useEffect(() => {
+    const starCountRef = ref(db, '/record');
+    onValue(starCountRef, snapshot => {
+      const data1 = snapshot.val();
+      Object.values(data1).map(Team => {
+
+        setRecord((old) => [...old, Team]);
+      });
+      const seen = new Set();
+      const filteredArr = record.filter(el => {
+        const duplicate = seen.has(el.Email);
+        seen.add(el.Email);
+        return !duplicate;
+      });
+      setUniqueRecord(filteredArr)
+
+    }
+
+    );
+  }, [uniqueRecord]);
+
+
   return (
     <div>
-     <div id="body">
+      <div id="body">
         <div className="table">
-            <TableContainer component={Paper}>
+
+          <TableContainer component={Paper}>
             <Table sx={{ minWidth: 700 }} aria-label="customized table">
               <TableHead>
                 <TableRow>
@@ -87,45 +88,33 @@ function Admin() {
                   <StyledTableCell align="right">Download</StyledTableCell>
                 </TableRow>
               </TableHead>
-               <TableBody>
-               {record.map((item,index) => (
-                  <StyledTableRow  key={index}>
-                    <StyledTableCell component="th" scope="row">{index}</StyledTableCell>
-                    <StyledTableCell align="right" >{item.name}</StyledTableCell>   
-                    <StyledTableCell align="right" >Paid</StyledTableCell>                
-                     
+              <TableBody>
+                {uniqueRecord && uniqueRecord.length !== 0 && uniqueRecord.map((item, index) => (
+                  <StyledTableRow key={item.Email}>
+                    <StyledTableCell component="th" scope="row">{index + 1}</StyledTableCell>
+                    <StyledTableCell align="right" >{item.name}</StyledTableCell>
+                    <StyledTableCell align="right" >Paid</StyledTableCell>
+
                     <StyledTableCell align="right" className="view">
-                       <link to="/view" >view</link>
+                      {/* <Link to="/view" >view</Link> */}
+                      <NavLink
+                      
+                        to={{
+                          pathname: `/view/${item.uid}`,
+                          state: { ProductData: item },
+                        }}
+                        style={{ fontWeight: 'bolder' }}>view</NavLink>
                     </StyledTableCell>
                     <StyledTableCell align="right" className="download"><a href="abc">Download</a></StyledTableCell>
-                    
+
                   </StyledTableRow>
                 ))}
-              </TableBody>              
+              </TableBody>
             </Table>
           </TableContainer>
         </div>
       </div>
-      <div className="mobile-view">
-        <table id="mobile-table">
-          <tr id="mb_head">
-            <th>Name</th>
-            <th>Status</th>
-            <th>View</th>
-            <th>Download</th>
-          </tr>
-          {record.map((item, index) => {
-            return (
-              <tr key={index} id="mb-data">
-                <td>{item.name}</td>
-                <td>status</td>
-                <td><a href="abc">View</a></td>
-                <td><a href="abc">Download</a></td>
-              </tr>
-            )
-          })}
-        </table>
-      </div>
+
     </div>
   )
 }
